@@ -7,7 +7,7 @@ import NewArrival from '../NewArrival/NewArrival'
 import SliderNav from '../Slider/SliderNav'
 import SliderProduct from '../Slider/SliderProduct'
 import ProductCarousel from '../Product/ProductSection'
-import CustomSection from '../CustomProduct/Customsection'
+import CustomSection from '../CustomProduct/CustomSection'
 import PaintingShop from '../PaintingShop/PaintingShop'
 import ProductSection from '../Product/ProductSection'
 
