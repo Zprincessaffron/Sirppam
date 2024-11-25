@@ -1,0 +1,149 @@
+/* Add this to your CSS file */
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.zoom-out {
+  animation: zoomOut 0.5s forwards;
+}
+
+
+/* Custom CSS */
+
+/* Custom CSS for White Dots */
+.custom-dots li button {
+  /* background: white; Dots color */
+  background-color: white;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+  color: white;
+}
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .25;
+  color: rgb(195, 194, 194) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: white !important;
+}
+
+
+.slick-slide.elevate {
+  transform: scale(1.1); /* Elevate the center slide */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Initial and zoomed states */
+.zoom-in {
+  animation: zoomIn 1s forwards ease-in-out;
+}
+
+.zoom-out {
+  animation: zoomOut 1s forwards ease-in-out;
+}
+
+/* Animation keyframes */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+/* Zoom-out animation for the shop section */
+.shop-section.zoom-out {
+  animation: zoomOut 0.5s forwards;
+}
+
+/* Define the keyframes for zoom-out */
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+/* body{
+  background-color: rgb(28, 28, 28) !important;
+} */
+
+
+
+
+.product-slide {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.product-card.zoom {
+  transform: scale(1.05);
+  border-color: #FBBF24; /* Yellow border on zoomed item */
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-info {
+  padding: 10px;
+  background-color: #1A202C;
+  color: white;
+  text-align: center;
+}
