@@ -8,7 +8,7 @@ import UserProfile from '../UserProfile/UserProfile';
 
 const Navbar = () => {
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false); // New state for user profile
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const wishlistItems = [
     { id: 1, name: 'Elegant Sculpture', image: '/Sculpt.png', price: 120 },
@@ -25,26 +25,35 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
+      {/* Navbar */}
+      <nav className="flex items-center justify-between px-3 py-2 border-b border-gray-200 sm:px-4">
+        {/* Sidebar for mobile menu */}
         <Sidebar />
-        <div className="text-2xl font-semibold tracking-wider flex items-center justify-center flex-col">
-          <img src="/logo2.png" className="h-8 mb-1" alt="Logo" />
-          <p className="border px-3  border-black text-[1rem] tracking-widest font-normal text-[#030148f4]">SIRPPAM</p>
+
+        {/* Logo */}
+        <div className="text-lg font-semibold tracking-wider flex items-center justify-center flex-col">
+          <img src="/logo2.png" className="h-6 sm:h-8 mb-1" alt="Logo" />
+          <p className="border px-2 sm:px-3 border-black text-sm sm:text-base tracking-widest font-normal text-[#030148f4]">
+            SIRPPAM
+          </p>
         </div>
-        <div className="flex items-center space-x-4">
+
+        {/* Icons */}
+        <div className="flex items-center space-x-2 sm:space-x-4">
           {isWishlistOpen ? (
-            <FiX onClick={toggleWishlist} className="text-lg cursor-pointer" />
+            <FiX onClick={toggleWishlist} className="text-base sm:text-lg cursor-pointer" />
           ) : (
-            <CiHeart onClick={toggleWishlist} className="text-lg cursor-pointer" />
+            <CiHeart onClick={toggleWishlist} className="text-base sm:text-lg cursor-pointer" />
           )}
 
-          <CiUser onClick={toggleProfile} className="text-lg cursor-pointer" /> {/* Toggle profile on click */}
-          
-          <div>
-            <Link to="/cart">
-              <CiShoppingCart className="text-xl cursor-pointer" />
-            </Link>
-          </div>
+          <CiUser
+            onClick={toggleProfile}
+            className="text-base sm:text-lg cursor-pointer"
+          />
+
+          <Link to="/cart">
+            <CiShoppingCart className="text-base sm:text-lg cursor-pointer" />
+          </Link>
         </div>
       </nav>
 
@@ -56,7 +65,7 @@ const Navbar = () => {
       />
 
       {/* User Profile Section */}
-      {isProfileOpen && <UserProfile onClose={toggleProfile} />} {/* Render profile section */}
+      {isProfileOpen && <UserProfile onClose={toggleProfile} />}
     </>
   );
 };

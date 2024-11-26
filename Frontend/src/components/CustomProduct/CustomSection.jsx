@@ -11,7 +11,7 @@ const CustomSection = () => {
   return (
     <div className="flex flex-col items-center justify-center p-6 bg-white">
         <div className={`text-center`}>
-          <h1 className="text-3xl uppercase tracking-widest font-medium mb-4">Customized Artworks</h1>
+          <h1 className="lg:text-3xl text-lg uppercase tracking-widest font-medium mb-4">Customized Artworks</h1>
           <p className="text-gray-700 mb-6 tracking-wider text-xs max-w-xl">
             Create a unique painting or sculpture tailored to your style. Our artists bring your vision to life with meticulous craftsmanship.
           </p>

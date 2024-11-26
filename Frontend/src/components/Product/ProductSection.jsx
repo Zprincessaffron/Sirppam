@@ -10,16 +10,9 @@ const ProductCarousel = ({ setShowCarousel, setZoomOut }) => {
     { id: 2, name: "Dancing Lady", price: "25,000", image: "/paint1.jpeg" },
     { id: 3, name: "Illusional Self portrait", price: "75,000", image: "/paint2.jpeg" },
     { id: 4, name: "Classic Dancer", price: "75,000", image: "/paint3.jpeg" },
-    // { id: 5, name: "Fishes", price: "7500", image: "/paint4.jpeg" },
-    // { id: 6, name: "A Deer", price: "7500", image: "/paint5.jpeg" },
-    // { id: 7, name: "Koi Fishes", price: "7500", image: "/paint6.jpeg" },
-    // { id: 8, name: "A Peacock", price: "7500", image: "/paint7.jpeg" },
-    // { id: 9, name: "A Beautiful Butterflies", price: "7500", image: "/paint8.jpeg" },
     { id: 10, name: "Man in Lake", price: "25,000", image: "/paint9.jpeg" },
     { id: 11, name: "The Ship", price: "12,500", image: "/paint10.jpeg" },
     { id: 12, name: "Dancing Posture", price: "25,000", image: "/paint11.jpeg" },
-    // { id: 13, name: "Gautama Buddha", price: "7500", image: "/paint12.jpeg" },
-    // { id: 14, name: "Peace Maker", price: "7500", image: "/paint13.jpeg" },
   ];
 
   const [centerIndex, setCenterIndex] = useState(0);
@@ -58,7 +51,7 @@ const ProductCarousel = ({ setShowCarousel, setZoomOut }) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#1A1A1A] relative">
+    <div className="flex items-center justify-center min-h-screen bg-[#1A1A1A] relative overflow-hidden">
       <button
         onClick={handleClose}
         className="text-white cursor-pointer absolute top-4 left-4 border border-white p-2 tracking-widest uppercase transition text-xs"

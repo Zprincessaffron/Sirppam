@@ -147,3 +147,10 @@
   color: white;
   text-align: center;
 }
+
+
+@media (max-width: 640px) {
+  .text-base {
+    font-size: 0.875rem; /* Adjust icon and text size */
+  }
+}

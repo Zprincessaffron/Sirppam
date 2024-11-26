@@ -99,7 +99,7 @@ const SculptureSection = () => {
 
         {/* Filter Sidebar */}
       <div
-        className={`absolute inset-y-0 left-0 w-64 p-4 bg-white transition-transform transform ${
+        className={`absolute inset-y-0 left-0 lg:w-64 p-4 bg-white transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } z-50`}
       >
@@ -174,7 +174,7 @@ const SculptureSection = () => {
       {/* Product Cards */}
       <div
         className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ${
-          isSidebarOpen ? "ml-72" : ""
+          isSidebarOpen ? "lg:ml-72" : ""
         }`}
       >
         {filteredSculptures.map((sculpture) => (

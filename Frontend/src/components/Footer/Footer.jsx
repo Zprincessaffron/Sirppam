@@ -3,24 +3,28 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black py-10 border-t border-gray-200">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+    <footer className="bg-white text-black py-6 border-t lg:border-gray-200 border-gray-300">
+      <div className="container mx-auto px-4">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
           {/* About Section */}
-          <div className='max-w-[250px] tracking-wider'>
-            <h2 className="text-md font-semibold mb-4">About Us</h2>
-            <p className="text-[0.7rem] mb-2">
+          <div className="tracking-wider text-center md:text-left">
+            <h2 className="text-md font-semibold mb-2">About Us</h2>
+            <p className="text-[0.7rem] mb-3">
               At Artistry, we curate a unique collection of handcrafted sculptures and paintings, designed to enhance your living space with elegance and creativity.
             </p>
-            <Link to="/about" className="text-black hover:text-gray-600 text-xs underline underline-offset-2">
+            <Link
+              to="/about"
+              className="text-black hover:text-gray-600 text-xs underline underline-offset-2"
+            >
               Learn More
             </Link>
           </div>
 
           {/* Customer Service Section */}
-          <div>
-            <h2 className="text-md font-semibold mb-4 tracking-wider">Customer Service</h2>
-            <ul className="space-y-2 text-xs tracking-wider">
+          <div className="tracking-wider text-center md:text-left">
+            <h2 className="text-md font-semibold mb-2">Customer Service</h2>
+            <ul className="space-y-1 text-xs">
               <li>
                 <Link to="/contact" className="text-black hover:text-gray-600">
                   Contact Us
@@ -50,9 +54,9 @@ const Footer = () => {
           </div>
 
           {/* Our Collection Section */}
-          <div>
-            <h2 className="text-md font-semibold mb-4 tracking-wider">Our Collection</h2>
-            <ul className="space-y-2 text-xs tracking-wider">
+          <div className="tracking-wider text-center md:text-left">
+            <h2 className="text-md font-semibold mb-2">Our Collection</h2>
+            <ul className="space-y-1 text-xs">
               <li>
                 <Link to="/sculptures" className="text-black hover:text-gray-600">
                   Sculptures
@@ -92,19 +96,19 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Signup Section */}
-          <div className='tracking-wider'>
-            <h2 className="text-md font-semibold mb-4">Subscribe to Our Newsletter</h2>
+          <div className="tracking-wider text-center md:text-left">
+            <h2 className="text-md font-semibold mb-2">Subscribe to Our Newsletter</h2>
             <p className="text-xs mb-4">
               Get the latest updates on new arrivals and exclusive offers.
             </p>
-            <form className="flex">
+            <form className="flex flex-col sm:flex-row">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-grow border border-black px-4 py-2 text-xs"
+                className="flex-grow border border-black px-4 py-2 text-xs mb-2 sm:mb-0"
                 required
               />
-              <button className="border-t border-r border-b border-black text-black px-4 py-2 hover:bg-gray-800 transition duration-300 text-xs uppercase">
+              <button className="border border-black px-4 py-2 text-xs uppercase hover:bg-black hover:text-white transition duration-300">
                 Subscribe
               </button>
             </form>
@@ -112,24 +116,46 @@ const Footer = () => {
         </div>
 
         {/* Social Media Section */}
-        <div className="flex justify-center space-x-4 mt-10 bg-red-500">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-            <i className="fab fa-facebook-f text-xl"></i>
+        <div className="flex justify-center space-x-4 mt-6">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600"
+          >
+            <i className="fab fa-facebook-f text-lg"></i>
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-            <i className="fab fa-instagram text-xl"></i>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600"
+          >
+            <i className="fab fa-instagram text-lg"></i>
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-            <i className="fab fa-twitter text-xl"></i>
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600"
+          >
+            <i className="fab fa-twitter text-lg"></i>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">
-            <i className="fab fa-linkedin-in text-xl"></i>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600"
+          >
+            <i className="fab fa-linkedin-in text-lg"></i>
           </a>
         </div>
 
         {/* Copyright Section */}
-        <div className="text-center mt-8">
-          <p className="text-xs">&copy; {new Date().getFullYear()} Sirppam. All rights reserved.</p>
+        <div className="text-center mt-6">
+          <p className="text-xs">
+            &copy; {new Date().getFullYear()} Sirppam. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

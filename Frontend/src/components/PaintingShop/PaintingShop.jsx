@@ -19,22 +19,22 @@ const PaintingShop = () => {
       {/* Conditionally render either the Shop Section or the ProductCarousel */}
       {!showCarousel ? (
         <div
-          className={`shop-section flex items-center justify-around p-8 ${
+          className={`shop-section flex flex-col sm:flex-row items-center justify-around p-4 sm:p-8 ${
             zoomOut ? "zoom-out" : ""
           }`}
         >
           {/* Text and Button Section */}
-          <div className="max-w-xl text-center">
-            <h1 className="text-xl uppercase tracking-widest font-medium mb-4">
-              Discover Artistic Sculptures
+          <div className="w-full sm:w-1/2 text-center mb-4 sm:mb-0 px-4">
+            <h1 className="text-lg sm:text-xl uppercase tracking-widest font-medium mb-4">
+              Discover Artistic Paintings
             </h1>
-            <p className="text-gray-700 mb-6 tracking-wider text-xs">
-              Explore our exclusive collection of handcrafted sculptures, each
+            <p className="text-gray-700 mb-6 tracking-wider text-xs sm:text-sm">
+              Explore our exclusive collection of handcrafted paintings, each
               piece meticulously designed to bring elegance and creativity into
               your space.
             </p>
             <button
-              className="border uppercase border-black px-6 py-2 tracking-widest hover:bg-black hover:text-white transition duration-300 text-xs"
+              className="border uppercase border-black px-4 py-2 sm:px-6 sm:py-2 tracking-widest hover:bg-black hover:text-white transition duration-300 text-xs"
               onClick={handleShopNowClick}
             >
               Shop Now
@@ -42,11 +42,11 @@ const PaintingShop = () => {
           </div>
 
           {/* Image Section */}
-          <div>
+          <div className="w-full sm:w-1/2 flex justify-center">
             <img
               src="/Paint.jpg"
-              alt="Sculpture"
-              className="w-full h-72 max-w-xs"
+              alt="Painting"
+              className="w-full h-48 sm:h-72 max-w-xs object-cover"
             />
           </div>
         </div>

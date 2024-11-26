@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 
 const ProductDetails = () => {
-  // Active image state for the gallery
-  const [activeImage, setActiveImage] = useState(
-    "https://via.placeholder.com/500"
-  );
-
-  // State for managing the current section being displayed
+  const [activeImage, setActiveImage] = useState("https://via.placeholder.com/500");
   const [activeSection, setActiveSection] = useState("Description");
 
   const images = [
@@ -17,15 +12,10 @@ const ProductDetails = () => {
     "https://via.placeholder.com/500/0000FF",
   ];
 
-  // Content for each section
   const sectionContent = {
     Description: (
       <p>
-        This hand-crafted sculpture captures the essence of serenity and
-        elegance, inspired by classical artistry. Made from high-quality,
-        durable materials, it is a centerpiece that adds a touch of refinement
-        to any space. Each detail is carefully crafted to create an aura of
-        tranquility and timeless beauty.
+        This hand-crafted sculpture captures the essence of serenity and elegance, inspired by classical artistry. Made from high-quality, durable materials, it is a centerpiece that adds a touch of refinement to any space. Each detail is carefully crafted to create an aura of tranquility and timeless beauty.
       </p>
     ),
     ProductInfo: (
@@ -48,9 +38,9 @@ const ProductDetails = () => {
 
   return (
     <div className="p-4">
-      <div className="flex justify-between space-x-8">
+      <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8">
         {/* Left: Image Gallery */}
-        <div className="w-1/2 sticky top-0 self-start">
+        <div className="w-full md:w-1/2 lg:sticky top-0 self-start">
           <div className="w-full h-[450px]">
             <img
               src={activeImage}
@@ -59,7 +49,7 @@ const ProductDetails = () => {
             />
           </div>
           {/* Thumbnail Images */}
-          <div className="flex space-x-2 mt-4 justify-center">
+          <div className="flex space-x-2 mt-4 justify-center overflow-x-auto">
             {images.map((image, index) => (
               <img
                 key={index}
@@ -75,7 +65,7 @@ const ProductDetails = () => {
         </div>
 
         {/* Right: Product Details */}
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           {/* Product Title and Pricing */}
           <h1 className="text-xl font-semibold mb-2 uppercase tracking-widest">
             Majestic Sculpture of Serenity
@@ -89,7 +79,7 @@ const ProductDetails = () => {
           {/* Tabs for Description, Product Info, and More Info */}
           <div className="mt-5">
             <div className="border-t border-b py-4 space-y-4">
-              <div className="flex space-x-4">
+              <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start">
                 <button
                   onClick={() => setActiveSection("Description")}
                   className={`pb-2 tracking-widest text-sm ${
@@ -122,36 +112,11 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Customer Reviews */}
-            <div className="mt-4">
-              {/* <h3 className="font-normal tracking-widest">Reviews (25)</h3>
-              <div className="mt-4">
-                <div className="border-b py-4">
-                  <p className="font-normal tracking-wide text-sm">Ananya</p>
-                  <p className="text-gray-500 text-xs">Mumbai • 22-08-2024</p>
-                  <p className="mt-2 text-sm tracking-wider">
-                    Absolutely beautiful! Adds so much character to my living room.
-                  </p>
-                </div>
-                <div className="border-b py-4">
-                  <p className="font-normal tracking-wide text-sm">Vikram</p>
-                  <p className="text-gray-500 text-xs">Delhi • 15-08-2024</p>
-                  <p className="mt-2 text-sm tracking-wider">
-                    This sculpture is a masterpiece! Very well crafted and worth the price.
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest text-yellow-500 border-b border-yellow-500 w-fit pb-1 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in mb-3">
-                  Load More
-                </button>
-              </div> */}
-
-              <div className="flex justify-around gap-2">
-                <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest border border-black w-1/2 px-4 h-10 flex items-center justify-center hover:bg-black hover:text-white cursor-pointer transition-all duration-300 ease-in mb-3">
-                  Add to cart
-                </button>
-              </div>
+            {/* Add to Cart Button */}
+            <div className="mt-4 flex justify-center">
+              <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest border border-black w-1/2 px-4 h-10 flex items-center justify-center hover:bg-black hover:text-white cursor-pointer transition-all duration-300 ease-in mb-3">
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -159,45 +124,39 @@ const ProductDetails = () => {
 
       {/* Customer Reviews */}
       <div className="mt-4">
-              <h3 className="font-normal tracking-widest">Reviews (25)</h3>
-              <div className="mt-4">
-                <div className="border-b py-4">
-                  <p className="font-normal tracking-wide text-sm">Ananya</p>
-                  <p className="text-gray-500 text-xs">Mumbai • 22-08-2024</p>
-                  <p className="mt-2 text-sm tracking-wider">
-                    Absolutely beautiful! Adds so much character to my living room.
-                  </p>
-                </div>
-                <div className="border-b py-4">
-                  <p className="font-normal tracking-wide text-sm">Vikram</p>
-                  <p className="text-gray-500 text-xs">Delhi • 15-08-2024</p>
-                  <p className="mt-2 text-sm tracking-wider">
-                    This sculpture is a masterpiece! Very well crafted and worth the price.
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest text-yellow-500 border-b border-yellow-500 w-fit pb-1 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in mb-3">
-                  Load More
-                </button>
-              </div>
+        <h3 className="font-normal tracking-widest">Reviews (25)</h3>
+        <div className="mt-4">
+          <div className="border-b py-4">
+            <p className="font-normal tracking-wide text-sm">Ananya</p>
+            <p className="text-gray-500 text-xs">Mumbai • 22-08-2024</p>
+            <p className="mt-2 text-sm tracking-wider">
+              Absolutely beautiful! Adds so much character to my living room.
+            </p>
+          </div>
+          <div className="border-b py-4">
+            <p className="font-normal tracking-wide text-sm">Vikram</p>
+            <p className="text-gray-500 text-xs">Delhi • 15-08-2024</p>
+            <p className="mt-2 text-sm tracking-wider">
+              This sculpture is a masterpiece! Very well crafted and worth the price.
+            </p>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest text-yellow-500 border-b border-yellow-500 w-fit pb-1 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in mb-3">
+            Load More
+          </button>
+        </div>
+      </div>
 
-              {/* <div className="flex justify-around gap-2">
-                <button className="mt-4 text-[0.7rem] text-center uppercase tracking-widest border border-black w-1/2 px-4 h-10 flex items-center justify-center hover:bg-black hover:text-white cursor-pointer transition-all duration-300 ease-in mb-3">
-                  Add to cart
-                </button>
-              </div> */}
-            </div>
-            
       {/* Recommended For You Section */}
       <div className="my-20">
         <h2 className="text-center text-2xl font-medium uppercase tracking-widest mb-12">
           Recommended For You
         </h2>
-        <div className="grid grid-cols-3 gap-4 ">
-            <ProductCard product={{ name: "Sculpture 1", price: 5000, id: 1 }} />
-            <ProductCard product={{ name: "Sculpture 2", price: 7500, id: 2 }} />
-            <ProductCard product={{ name: "Sculpture 3", price: 6000, id: 3 }} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <ProductCard product={{ name: "Sculpture 1", price: 5000, id: 1 }} />
+          <ProductCard product={{ name: "Sculpture 2", price: 7500, id: 2 }} />
+          <ProductCard product={{ name: "Sculpture 3", price: 6000, id: 3 }} />
         </div>
       </div>
     </div>
